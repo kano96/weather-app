@@ -1,5 +1,5 @@
 import React from 'react';
-
+import style from './search.module.css'
 export default function SearchBar({onSearch}) {
   // acá va tu código
   function handleOnSearch(){
@@ -8,8 +8,8 @@ export default function SearchBar({onSearch}) {
       onSearch(input.value);
     }
   }
-  return <div>
-    <input id='search-bar-input' type="text" placeholder='Ciudad...'/>
-    <button onClick={handleOnSearch}>Agregar</button>
+  return <div className={style.searchContainer}>
+    <input id='search-bar-input' type="text" className={style.agregarinp} placeholder='Ciudad...'/>
+    <button onClick={handleOnSearch} className={style.agregarbut}>Agregar</button>
   </div>
 };   

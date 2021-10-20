@@ -1,0 +1,12 @@
+.cardtemp{
+    display: inline-grid;
+    margin-left: 18px;
+}
+.label{
+    font-size: large;
+    font-weight: 500;
+}
+.value{
+    font-size: small;
+}
+

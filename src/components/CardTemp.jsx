@@ -1,8 +1,10 @@
+import style from './cardtemp.module.css'
+
 export default function CardTemp({label, value}){
     return(
-      <div>
-        <label htmlFor="">{label}</label>
-        <span>{value}</span>
+      <div className={style.cardtemp}>
+        <label htmlFor="" className={style.label}>{label}</label>
+        <span className={style.value}>{value}</span>
       </div>
     )
   }
