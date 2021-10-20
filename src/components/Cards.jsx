@@ -1,5 +1,6 @@
 import React from 'react';
-import Card from './Card'
+import Card from './Card';
+import PropTypes from 'prop-types';
 
 export default function Cards({cities}) {
   // acá va tu código
@@ -15,4 +16,12 @@ export default function Cards({cities}) {
         onClose={()=> alert (city.name)}
     />)}
   </div>
+};
+
+Card.propTypes = {
+  max: PropTypes.number,
+  min: PropTypes.number,
+  name: PropTypes.string,
+  img: PropTypes.string,
+  onClick: PropTypes.func 
 };
