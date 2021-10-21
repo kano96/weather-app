@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './search.module.css'
 export default function SearchBar({onSearch}) {
   // acá va tu código
-  function handleOnSearch(){
-    if(typeof onSearch === "function"){
-      const input = document.getElementById("search-bar-input")
-      onSearch(input.value);
-    }
+  const [city, setCity] = useState("");
+  const handleInputChange = (e) => {
+    e.preventDefault();
+    setCity(e.target.value);
   }
-  return <div className={style.searchContainer}>
-    <input id='search-bar-input' type="text" className={style.agregarinp} placeholder='Ciudad...'/>
-    <button onClick={handleOnSearch} className={style.agregarbut}>Agregar</button>
-  </div>
+  return (
+    <form className={style.searchContainer} onSubmit={(e) => {
+      e.preventDefault();
+      onSearch(city);
+    }}>
+      <input
+        type="text"
+        placeholder="Ciudad"
+        className={style.agregarinp}
+        onChange={(e)=>handleInputChange(e)}
+      />
+      <input type="submit" className={style.agregarbut} value="Agregar" />
+    </form>
+  )
 };   

@@ -3,19 +3,18 @@ import Card from './Card';
 import PropTypes from 'prop-types';
 import style from './cards.module.css';
 
-export default function Cards({cities}) {
+export default function Cards({cities,onClose}) {
   // acá va tu código
   // tip, podés usar un map
   return <div className={style.cards_container}>
-    {cities.map((city) => 
-      <Card 
-        key = {city.id}
-        min={city.main.temp_min} 
-        max={city.main.temp_max} 
-        name={city.name} 
-        img={city.weather[0].icon} 
-        onClose={()=> alert (city.name)}
-    />)}
+      {cities.map(c => <Card
+        max={c.max}
+        min={c.min}
+        name={c.name}
+        img={c.img}
+        onClose={() => onClose(c.id)}
+        id={c.id}
+      /> )}
   </div>
 };
 

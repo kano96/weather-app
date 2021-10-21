@@ -1,0 +1,25 @@
+#logoHenry {
+  margin-right: 20px;
+}
+
+.nav{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #264653ce;
+  color: white;
+  padding-bottom: 1.2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.title{
+  display: flex;
+  padding-top: 1rem;
+}
+
+h4{
+  align-self: center;
+  margin-left: 10px;
+}
