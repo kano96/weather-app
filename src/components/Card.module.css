@@ -1,34 +1,56 @@
 .cardContainer{
-    border: solid 1px transparent;
-    background-color: #d3d3d3;
-    width: 250px;
-    padding-bottom: 75px;
-    margin: 10px auto;
+    border: solid 1px black;
+    border-radius: 0.5rem;
+    
+
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-template-rows: 1fr 2fr;
+    padding: 2rem;
+
+    position: relative;
+    align-items: center;
 }
 
 .button{
-    background-color: #ba181b;
-    color: white;
-    border: none;
-    border-radius: 20%;
-    font-size: 1rem;
-    padding: 0.125em 0.5em;
-    display: block;
-    margin-left: auto;
-    margin-top: 0.2em;
-    margin-right: 0.2em;
     
+    right: 0.5rem;
+    top: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--btn-danger-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5rem 0.25rem;
+    border-radius: 9999px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--btn-danger-color);
+
+    transition: 250ms;
+    position: absolute;
     
 }
+.button:hover{
+    color: white;
+    background-color: var(--btn-danger-color);
+}
 
-.icon{
+/* .icon{
     margin-top: 18px;
     margin-left: 18px;
-}
+} */
 
 .city{
-    display: block;
-    font-size: large;
-    font-weight: bold;
+    grid-column: 1 / span 3;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width : 576) {
+    .cardContainer{
+        width: 25rem;
+    }
 }
 
