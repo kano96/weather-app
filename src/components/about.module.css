@@ -1,0 +1,12 @@
+.aboutcontainer{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.title{
+    padding-bottom: 3rem;
+}
+.desc{
+    
+}

@@ -1,14 +1,17 @@
-import React, { useState } from 'react'; //Se agregó el { useState }
+import React, { useState } from 'react';
+import { Route} from 'react-router-dom';
 import './App.css';
+import Nav from './components/Nav.jsx';
 import Cards from './components/Cards.jsx';
-import Nav from './components/Nav.jsx'
+import About from './components/About.jsx';
+import Ciudad from './components/Ciudad.jsx'
 
 
 export default function App() {
   const [cities, setCities] = useState([]);
-  const apiKey = "560b06b217ba128f58ca4a0e187e2341";
+  const apiKey = process.env.REACT_APP_API_KEY;
   function onSearch(ciudad) {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`).then(r => r.json()).then((recurso) => {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`).then(r => r.json()).then((recurso) => {
         if(recurso.main !== undefined){
           const ciudad = {
             min: Math.round(recurso.main.temp_min),
@@ -28,26 +31,43 @@ export default function App() {
           alert("Ciudad no encontrada");
         }
       });
-
     }
+  function onFilter(ciudadId) {
+    let ciudad = cities.filter(c => c.id === parseInt(ciudadId));
+    if(ciudad.length > 0) {
+      return ciudad[0];
+    } else {
+      return alert("Esta ciudad no se encuentra en la lista");
+    }
+  }
   function onClose(id) {
       setCities(oldCities => oldCities.filter(c => c.id !== id));
   }
   return (
-  <div className="App">
-    <div>
-      <Nav onSearch={onSearch}/>
-    </div>
-    <div>
-      <Cards
-        cities={cities}
-        onClose={onClose}
+    <div className="App">
+      <Route
+        path='/'
+        render={()=><Nav onSearch={onSearch}/>}
+      />
+      <Route
+        path='/about'
+        component={About}
+      />
+      <Route
+        strict
+        path='/'
+        render={()=><Cards
+          cities={cities}
+          onClose={onClose}
+          />}
+        />
+      <Route
+        path="/ciudad/:ciudadId"
+        render={({match})=> 
+          <Ciudad 
+          city={onFilter(match.params.ciudadId)}
+          />}
       />
     </div>
-
-  </div>
   );
 }
-
-
-//apikey 560b06b217ba128f58ca4a0e187e2341
