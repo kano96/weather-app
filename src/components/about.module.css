@@ -8,10 +8,18 @@
     flex-direction: column;
     justify-content: center;
     background-color: #ede0d4dc;
-    padding: 5rem 10rem;
+    
+    padding: 2rem 2rem;
     width: 75%;
-
+    border-radius: 25px;
 }
+
+@media screen and (min-width:650px){
+    .aboutcontainer{
+        padding: 5rem 10rem;
+        width: 85%;
+    }
+}    
 .title{
     padding-bottom: 3rem;
 }
