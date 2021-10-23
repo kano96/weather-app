@@ -1,8 +1,16 @@
+.aboutsection{
+    display: flex;
+    justify-content: center;
+}
 .aboutcontainer{
     margin-top: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #ede0d4dc;
+    padding: 5rem 10rem;
+    width: 75%;
+
 }
 .title{
     padding-bottom: 3rem;
