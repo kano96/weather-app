@@ -17,9 +17,17 @@
 .title{
   display: flex;
   padding-top: 1rem;
+  gap: 0.5rem;
+  align-items: center;
+}
+h4:hover{
+  color: burlywood;
 }
 
-h4{
-  align-self: center;
-  margin-left: 10px;
+.about{
+  font-size: 1em;
+  margin-left: 5px;
+}
+.about:hover{
+  color: burlywood;
 }

@@ -1,0 +1,21 @@
+.ciudadsection{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.icon{
+    align-self: center;
+    width: 100px;
+}
+.name{
+    grid-column: 1 /span2;
+}
+.info{
+    font-weight: 600;
+}
+.container{
+    background-color: #ede0d491;
+    padding: 2.5rem 5rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

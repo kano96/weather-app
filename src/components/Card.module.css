@@ -43,6 +43,10 @@
     font-weight: 700;
     font-size: 1.5rem;
 }
+.city:hover{
+    color: burlywood;
+    text-shadow: 1px 1px 1px black;
+}
 
 @media screen and (min-width : 576px) {
     .cardContainer{

@@ -12,7 +12,7 @@ export default function Card({max, min, name, img, onClose,id}) {
   }
   return <div className={styles.cardContainer}>
     <button onClick={handleOnClose} className={styles.button}>x</button>
-    <Link to={`/ciudad/${id}`}>
+    <Link to={`/ciudad/${id}`} style={{textDecoration:'none' , color:'inherit',gridColumn:'1 / span 3'}}>
       <h5 className={styles.city}>{name}</h5>
     </Link>
     <CardTemp label="Min" value={min}/>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import './App.css';
 import Nav from './components/Nav.jsx';
 import Cards from './components/Cards.jsx';
@@ -54,8 +54,8 @@ export default function App() {
         component={About}
       />
       <Route
-        strict
         path='/'
+        exact
         render={()=><Cards
           cities={cities}
           onClose={onClose}
